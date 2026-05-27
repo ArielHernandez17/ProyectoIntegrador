@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E1E"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Encabezado -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="#2C2C2C"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proyecto Integrador"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ariel Hernandez Velazquez"
+                    android:textSize="16sp"
+                    android:textColor="#B0B0B0"
+                    android:layout_marginTop="4dp" />
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="3dp"
+                    android:background="#4A90E2"
+                    android:layout_marginTop="12dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Menú botones 2x2 -->
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:rowCount="2"
+            app:columnCount="2">
+
+            <Button
+                android:id="@+id/id_btn_bloc_notas"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:text="Bloc de Notas"
+                android:textAllCaps="false"
+                android:backgroundTint="#2C2C2C"
+                android:textColor="#4A90E2"
+                app:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/id_btn_archivo_sd"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:text="Archivo en SD"
+                android:textAllCaps="false"
+                android:backgroundTint="#2C2C2C"
+                android:textColor="#4A90E2"
+                app:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/id_btn_inventario"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:text="Inventario SQLite"
+                android:textAllCaps="false"
+                android:backgroundTint="#2C2C2C"
+                android:textColor="#4A90E2"
+                app:layout_columnWeight="1" />
+
+            <Button
+                android:id="@+id/id_btn_creditos"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:text="Creditos"
+                android:textAllCaps="false"
+                android:backgroundTint="#2C2C2C"
+                android:textColor="#4A90E2"
+                app:layout_columnWeight="1" />
+        </androidx.gridlayout.widget.GridLayout>
+
+        <!-- Tarjeta de Créditos -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCreditos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#2C2C2C">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Creditos"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#4A90E2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ariel Hernandez Velazquez"
+                    android:textSize="18sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ingenieria en Computacion"
+                    android:textSize="14sp"
+                    android:textColor="#B0B0B0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Proyecto Integrador - Ejercicios 14, 15 y 16"
+                    android:textSize="13sp"
+                    android:textColor="#909090"
+                    android:layout_marginTop="8dp" />
+
+                <Button
+                    android:id="@+id/btnCerrarCreditos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Cerrar"
+                    android:backgroundTint="#3A3A5E"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Bloc de Notas (Ejercicio 14) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardBlocNotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#2C2C2C">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bloc de Notas (Memoria Interna)"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#4A90E2"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/editNota"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:hint="Escribe tu nota aqui..."
+                    android:background="@drawable/edittext_border_modern"
+                    android:padding="16dp"
+                    android:inputType="textMultiLine"
+                    android:gravity="top"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
+
+                <TextView
+                    android:id="@+id/tvContador"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:text="0 caracteres"
+                    android:textColor="#4A90E2"
+                    android:layout_marginTop="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <Button
+                        android:id="@+id/btnGuardarNota"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Grabar"
+                        android:backgroundTint="#4A90E2"
+                        android:textColor="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/btnLimpiarNota"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Limpiar"
+                        android:backgroundTint="#3A3A5E"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnCerrarBloc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Volver al Menu"
+                    android:backgroundTint="#3A3A5E"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="16dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Archivo en SD (Ejercicio 15) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardArchivoSD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#2C2C2C">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Archivo en Tarjeta SD"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#4A90E2"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/editNombreArchivoSD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre del archivo (ej: datos.txt)"
+                    android:background="@drawable/edittext_border_modern"
+                    android:padding="14dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
+
+                <EditText
+                    android:id="@+id/editContenidoSD"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:hint="Contenido del archivo"
+                    android:background="@drawable/edittext_border_modern"
+                    android:padding="14dp"
+                    android:inputType="textMultiLine"
+                    android:gravity="top"
+                    android:layout_marginTop="12dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <Button
+                        android:id="@+id/btnGrabarSD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Grabar Auto"
+                        android:backgroundTint="#4A90E2"
+                        android:textColor="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/btnGrabarSDManual"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Grabar Manual"
+                        android:backgroundTint="#4A90E2"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <Button
+                        android:id="@+id/btnRecuperarSD"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Recuperar Auto"
+                        android:backgroundTint="#3A3A5E"
+                        android:textColor="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/btnRecuperarSDManual"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Recuperar Manual"
+                        android:backgroundTint="#3A3A5E"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnCerrarArchivoSD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Volver al Menu"
+                    android:backgroundTint="#3A3A5E"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="16dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Inventario SQLite (Ejercicio 16) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardInventario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#2C2C2C">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Inventario SQLite"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#4A90E2"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/editCodigo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Codigo"
+                    android:inputType="number"
+                    android:background="@drawable/edittext_border_modern"
+                    android:padding="14dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
+
+                <EditText
+                    android:id="@+id/editDescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Descripcion"
+                    android:background="@drawable/edittext_border_modern"
+                    android:padding="14dp"
+                    android:layout_marginTop="12dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
+
+                <EditText
+                    android:id="@+id/editPrecio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Precio"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/edittext_border_modern"
+                    android:padding="14dp"
+                    android:layout_marginTop="12dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
+
+                <EditText
+                    android:id="@+id/editStock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Stock"
+                    android:inputType="number"
+                    android:background="@drawable/edittext_border_modern"
+                    android:padding="14dp"
+                    android:layout_marginTop="12dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#808080" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <Button
+                        android:id="@+id/btnAlta"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Alta"
+                        android:backgroundTint="#4A90E2"
+                        android:textColor="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/btnConsultaCodigo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="X Codigo"
+                        android:backgroundTint="#3A3A5E"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <Button
+                        android:id="@+id/btnConsultaDescripcion"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="X Descripcion"
+                        android:backgroundTint="#3A3A5E"
+                        android:textColor="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/btnBaja"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Baja"
+                        android:backgroundTint="#D32F2F"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <Button
+                        android:id="@+id/btnModificacion"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Modificar"
+                        android:backgroundTint="#FFA000"
+                        android:textColor="#FFFFFF" />
+
+                    <Button
+                        android:id="@+id/btnMostrarTodos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mostrar Todos"
+                        android:backgroundTint="#3A3A5E"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/listViewArticulos"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#1E1E1E"
+                    android:padding="8dp" />
+
+                <Button
+                    android:id="@+id/btnCerrarInventario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Volver al Menu"
+                    android:backgroundTint="#3A3A5E"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginTop="16dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
